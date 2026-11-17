@@ -40,7 +40,7 @@ function Cloud({ items, radius }) {
     <group ref={group}>
       <mesh>
         <sphereGeometry args={[radius * 0.98, 32, 32]} />
-        <meshBasicMaterial color="#8fae8b" wireframe transparent opacity={0.06} />
+        <meshBasicMaterial color="#4da3ff" wireframe transparent opacity={0.06} />
       </mesh>
       {items.map((s, i) => (
         <Html key={s.name} position={points[i]} center zIndexRange={[10, 0]}>

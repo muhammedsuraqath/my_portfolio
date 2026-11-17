@@ -3,6 +3,7 @@ import {
   profile, stats, skillGroups, globeSkills, experience, projects,
   flowClips, education, research, certifications,
 } from './data.js'
+import SpinPortrait from './components/SpinPortrait.jsx'
 
 const HeroScene = lazy(() => import('./components/HeroScene.jsx'))
 const SkillGlobe = lazy(() => import('./components/SkillGlobe.jsx'))
@@ -85,8 +86,8 @@ function Hero() {
             {profile.resumeUrl && <a href={profile.resumeUrl} className="btn btn-ghost" download>Résumé</a>}
           </div>
         </div>
-        <Tilt className="hero-photo" max={12}>
-          <img src={profile.photos.hero} alt={`Portrait of ${profile.name}`} />
+        <Tilt className="hero-photo" max={6}>
+          <SpinPortrait frames={profile.photos.spin} alt={`360° portrait of ${profile.name}`} />
           <div className="photo-glare" />
           <div className="photo-badge">
             <strong>{profile.name}</strong>
@@ -118,7 +119,7 @@ function About() {
         <div className="gallery reveal">
           {profile.photos.gallery.map((src, i) => (
             <Tilt key={src} className={`g-item g-${i}`} max={8}>
-              <img src={src} alt={`${profile.name}, photo ${i + 2}`} loading="lazy" />
+              <img src={src} alt={`${profile.name}, portrait ${i + 1}`} loading="lazy" />
             </Tilt>
           ))}
         </div>

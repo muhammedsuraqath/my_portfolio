@@ -20,8 +20,10 @@ export const profile = {
   summary:
     'AI-augmented Full Stack Developer who ships complete products across backend, web and mobile. Currently building a four-role real estate platform in Flutter, .NET and Angular, alongside Stimes, a multi-tenant HR, payroll and operations SaaS spanning Web, Mobile, Kiosk and Employee Self-Service. Hands-on with microservices, PostgreSQL migrations, RabbitMQ messaging and self-healing test automation, with Claude AI built into everyday delivery.',
   photos: {
-    hero: BASE + 'images/photo-1.png',
-    gallery: [BASE + 'images/photo-2.png', BASE + 'images/photo-3.png', BASE + 'images/photo-4.png'],
+    // 8 real photo frames, front → side → back → side → front, for the 360° hero
+    spin: [1, 2, 3, 4, 5, 6, 7, 8].map((k) => BASE + `images/spin/spin-${k}.webp`),
+    portrait: BASE + 'images/portrait-front.webp',
+    gallery: [BASE + 'images/portrait-front.webp', BASE + 'images/spin/spin-2.webp', BASE + 'images/portrait-alt.webp'],
   },
 }
 
